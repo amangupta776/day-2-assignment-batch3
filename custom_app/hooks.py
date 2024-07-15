@@ -119,16 +119,40 @@ app_license = "mit"
 # }
 
 # Document Events
+
+
+#Fixtures 
+fixtures = [
+    {
+      "dt": "Custom Field",
+        "filters": [
+            [
+                "name", "in", [
+                    "Customer-custom_customer_anniversary",
+                    "Sales Invoice-custom_customer_anniversary"
+                ]
+            ]
+        ]
+    }
+]
 # ---------------
 # Hook on document methods and events
-
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
+doc_events = {
+	# "*": {
+	# 	"on_update": "method",
+	# 	"on_cancel": "method",
+	# 	"on_trash": "method"
+	# }
+    "Customer":{
+        "validate":"custom_app.Customize_Events.Customize_Event_Customer.validateDate"
+    },
+     "Sales Order": {
+        "on_update": "custom_app.Customize_Events.Cutomize_SalesOrder.send_email_on_approval"
+    },
+    "Purchase Order": {
+        "on_update": "custom_app.Customize_Events.Customize_Purchase_order.sendMail"
+    }
+}
 
 # Scheduled Tasks
 # ---------------
