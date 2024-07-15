@@ -13,3 +13,10 @@ def customFunc(a,b):
     result = a + b
     print(f"Result: {result}")
     return result
+
+def customError():
+    try:
+        a=1/0
+        print(a)
+    except Exception as e:
+        frappe.log_error("Can't Divided By 0")
