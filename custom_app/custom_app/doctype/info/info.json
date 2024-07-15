@@ -13,7 +13,7 @@
   {
    "fieldname": "name1",
    "fieldtype": "Data",
-   "label": "Name"
+   "label": "First Name"
   },
   {
    "fieldname": "age",
@@ -28,7 +28,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-15 10:04:28.042775",
+ "modified": "2024-07-15 10:59:57.891073",
  "modified_by": "Administrator",
  "module": "Custom App",
  "name": "Info",
